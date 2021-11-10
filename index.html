@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Day 2 Assignment Demo</title>
+</head>
+<body style="background-color: coral;">
+    <h1 id="heading">JavaScript Day 2 Assignment Demonstration</h1>
+    <h3 id="instructions">Press on the corresponding button to see the corresponsing</h3>
+    <div id="note">Note: The initial page background color will be "Coral"</div>
+
+    <h3 class="ex">Explanation</h3><br>
+    <button onclick="q2a(this)">Question 2(a)</button><br>
+    <h3 class="ex">Explanation</h3><br>
+    <button onclick="q2b(this)">Question 2(b)</button><br>
+    <h3 class="ex">Explanation</h3><br>
+    <button onclick="q4a(this)">Question 4(a)</button><br>
+    <h3 class="ex">Explanation</h3><br>
+    <button onclick="q4b(this)">Question 4(b)</button><br>
+    <h3 class="ex">Explanation</h3><br>
+    <button onmousedown="q5a(this)" onmouseup="q5b(this)">Question 5(a) and 5(b)</button>
+
+    <p id="firstText" style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 1</p>
+    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 2</p>
+    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 3</p>
+    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 4</p>
+    
+    <script>
+        /*  */
+        var clicked = true;
+
+        function q2a(id)
+        {
+            document.getElementById("firstText").style.color = "green";
+        }
+        function q2b()
+        {
+            var all_p_tags = document.getElementsByTagName("P");
+            for(var i = 0;i < 4;i++)
+            {
+                all_p_tags[i].style.color = "blue";
+            }
+            
+        }
+        /*  */
+        function q3a(id)
+        {
+            var names = ["I","am","learning","JavaScript"]
+            //For in loop
+            for(var i in names)
+            {
+                console.log("Hello World")
+                document.body.innerHTML+= (`<p style="font-size:xx-large;">`+ names[i] +`</p>`)
+            }
+        }
+
+        function q3b(id)
+        {
+            //For each loop 
+            var names = {"Audi":"Germany","Chevorlet":"USA","Tata":"India","Hyundai":"South-Korea","Honda":"Japan"}
+            Object.entries(names).forEach(element => {
+                const [key,value] = element
+                document.body.innerHTML += (`<p style="font-size:xx-large;">`+ key +` is from `+ value +`</p>`)
+            });
+        }
+        function q4a(id)
+        {
+            if(clicked == true)
+            {
+                document.body.style.backgroundImage = "url('./res/img1.jpg')"
+                document.getElementsByClassName("ex")[0].style.color = "white"
+                document.getElementsByClassName("ex")[1].style.color = "white"
+                document.getElementsByClassName("ex")[2].style.color = "white"
+                document.getElementsByClassName("ex")[3].style.color = "white"
+                document.getElementsByClassName("ex")[4].style.color = "white"
+                clicked = false
+            }
+            else
+            {
+                console.log("flipped")
+                document.body.style.backgroundImage = "url('./res/img2.jpg')"
+                clicked = true
+            }
+           
+            document.getElementById("heading").style.color = "white";
+            document.getElementById("instructions").style.color = "white";
+            document.getElementById("note").style.color = "white";
+
+        }
+        function q4b(id)
+        {
+            document.body.style.backgroundImage = ""
+            if(clicked == true)
+            {
+                document.body.style.backgroundColor = "blue"
+                clicked = false
+            }
+            else
+            {
+                document.body.style.backgroundColor = "coral"
+                clicked = true
+            }
+            
+            document.getElementById("heading").style.color = "white";
+            document.getElementById("instructions").style.color = "white";
+            document.getElementById("note").style.color = "white";
+            var all_p_tags = document.getElementsByTagName("P");
+            for(var i = 0;i < 4;i++)
+            {
+                all_p_tags[i].style.color = "white";
+            }
+
+        }
+        function q5a(id)
+        {
+            document.body.style.backgroundColor = "green"
+        }
+        function q5b(id)
+        {
+            document.body.style.backgroundColor = "red"
+        }
+
+    </script>
+</body>
+</html>
