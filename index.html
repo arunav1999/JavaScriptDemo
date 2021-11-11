@@ -7,25 +7,49 @@
     <title>JavaScript Day 2 Assignment Demo</title>
 </head>
 <body style="background-color: coral;">
-    <h1 id="heading">JavaScript Day 2 Assignment Demonstration</h1>
-    <h3 id="instructions">Press on the corresponding button to see the corresponsing</h3>
+    <div id="heading" style="font-weight: bold;font-size: xxx-large;">JavaScript Day 2 Assignment Demonstration</div>
+    <h3 id="instructions">Press on the corresponding button to see the respective output</h3>
     <div id="note">Note: The initial page background color will be "Coral"</div>
-
-    <h3 class="ex">Explanation</h3><br>
-    <button onclick="q2a(this)">Question 2(a)</button><br>
-    <h3 class="ex">Explanation</h3><br>
-    <button onclick="q2b(this)">Question 2(b)</button><br>
-    <h3 class="ex">Explanation</h3><br>
-    <button onclick="q4a(this)">Question 4(a)</button><br>
-    <h3 class="ex">Explanation</h3><br>
-    <button onclick="q4b(this)">Question 4(b)</button><br>
-    <h3 class="ex">Explanation</h3><br>
-    <button onmousedown="q5a(this)" onmouseup="q5b(this)">Question 5(a) and 5(b)</button>
-
-    <p id="firstText" style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 1</p>
-    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 2</p>
-    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 3</p>
-    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 4</p>
+    <h2 class="ex">Question 1:</h2>
+    <a href="http://surl.li/aqmgg" target="_blank">Answer</a>
+    <h2 class="ex">Question 2: Demonstrating the differrence between getElementById() and getElementsByTagName()</h2>
+    <h2>getElementById()</h2>
+    <p>
+        The difference is that GetElementByID() will retrieve a single element object based on the unique id specified, whereas getElementsByTagName() will retrieve an array of all element objects with the specified tag name.
+        Here, on pressing the try button we'll particularly select an element by its particular id and modify it.
+        In the output we'll see only the TESTING TEXT 1 turning into Green.
+    </p>
+    <button onclick="q2a(this)">getElementById()</button><br><br>
+    <img src="res/q2res.png" height="300" width="500"></img><br>
+    
+    <h2>getElementsByTagName()</h2>
+    <p>
+        getElementsByTagName() retrieves an array of all element objects with the specified tag name. Then just like an array
+        we can manipulate an individual element using it's index in the array. Here we will iterate over all the elements and turn
+        their colour into Blue.
+    </p>
+    <button onclick="q2b(this)">getElementsByTagName()</button><br>
+    <p style="color:darkred;font-size: xxx-large;font-weight: bold;">OUTPUT:</p>
+    <ul>
+        <li id="firstText" style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 1</li>
+        <li style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 2</li>
+        <li style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 3</li>
+        <li style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 4</li>
+    </ul>
+    <h2 class="ex">Question 3:</h2>
+    <a href="http://surl.li/aqmgg" target="_blank">Answer</a>
+    <h2 class="ex">Question 4 Demo:</h2>
+    <img src="res/q4res.png" height="800" width="600"></img><br>
+    <button onclick="q4a(this)">Change background image</button><br><br>
+    <button onclick="q4b(this)">Change background color</button><br>
+    
+    <h2 class="ex">Question 5 Demo:</h2>
+    <h3>Drag mouse in the below square and click to change the color, color will be changed
+        both on mouse button press and its release.
+    </h3>
+    <img src="res//q5res.png" height="300" width="600"></img><br>
+    <img src="res/playarea.png" height="200" width="200"  onmousedown="q5a(this)" onmouseup="q5b(this)"></img>
+    <div id="heading" style="font-weight: bold;font-size: xxx-large;">END</div>
     
     <script>
         /*  */
@@ -35,12 +59,14 @@
         {
             document.getElementById("firstText").style.color = "green";
         }
-        function q2b()
+        function q2b(id)
         {
-            var all_p_tags = document.getElementsByTagName("P");
+            var all_p_tags = document.getElementsByTagName("LI");
             for(var i = 0;i < 4;i++)
             {
+                
                 all_p_tags[i].style.color = "blue";
+                
             }
             
         }
@@ -115,10 +141,12 @@
         }
         function q5a(id)
         {
+            //function bound with onmouseup
             document.body.style.backgroundColor = "green"
         }
         function q5b(id)
         {
+            //function bound with onmousedown
             document.body.style.backgroundColor = "red"
         }
 
