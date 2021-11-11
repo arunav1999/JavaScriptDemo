@@ -11,10 +11,10 @@
     <h3 id="instructions">Press on the corresponding button to see the respective output</h3>
     <div id="note">Note: The initial page background color will be "Coral"</div>
     <h2 class="ex">Question 1:</h2>
-    <a href="http://surl.li/aqmgg" target="_blank">Answer</a>
+    <a id="aa" href="http://surl.li/aqmgg" target="_blank" style="font-size: xx-large;">Answer</a>
     <h2 class="ex">Question 2: Demonstrating the differrence between getElementById() and getElementsByTagName()</h2>
-    <h2>getElementById()</h2>
-    <p>
+    <h2 id="ce">getElementById()</h2>
+    <p id="cf">
         The difference is that GetElementByID() will retrieve a single element object based on the unique id specified, whereas getElementsByTagName() will retrieve an array of all element objects with the specified tag name.
         Here, on pressing the try button we'll particularly select an element by its particular id and modify it.
         In the output we'll see only the TESTING TEXT 1 turning into Green.
@@ -22,8 +22,8 @@
     <button onclick="q2a(this)">getElementById()</button><br><br>
     <img src="res/q2res.png" height="300" width="500"></img><br>
     
-    <h2>getElementsByTagName()</h2>
-    <p>
+    <h2 id="cd">getElementsByTagName()</h2>
+    <p id="cg">
         getElementsByTagName() retrieves an array of all element objects with the specified tag name. Then just like an array
         we can manipulate an individual element using it's index in the array. Here we will iterate over all the elements and turn
         their colour into Blue.
@@ -37,14 +37,14 @@
         <li style="color:darkred;font-size: xxx-large;font-weight: bold;">TESTING TEXT 4</li>
     </ul>
     <h2 class="ex">Question 3:</h2>
-    <a href="http://surl.li/aqmgg" target="_blank">Answer</a>
+    <a id="ab" href="http://surl.li/aqmgg" target="_blank" style="font-size: xx-large;">Answer</a>
     <h2 class="ex">Question 4 Demo:</h2>
     <img src="res/q4res.png" height="800" width="600"></img><br>
     <button onclick="q4a(this)">Change background image</button><br><br>
     <button onclick="q4b(this)">Change background color</button><br>
     
     <h2 class="ex">Question 5 Demo:</h2>
-    <h3>Drag mouse in the below square and click to change the color, color will be changed
+    <h3 id="cc">Drag mouse in the below square and click to change the color, color will be changed
         both on mouse button press and its release.
     </h3>
     <img src="res//q5res.png" height="300" width="600"></img><br>
@@ -101,18 +101,33 @@
                 document.getElementsByClassName("ex")[2].style.color = "white"
                 document.getElementsByClassName("ex")[3].style.color = "white"
                 document.getElementsByClassName("ex")[4].style.color = "white"
+                document.getElementById("cc").style.color = "white"
+                document.getElementById("cd").style.color = "white"
+                document.getElementById("ce").style.color = "white"
+                document.getElementById("cf").style.color = "white"
+                document.getElementById("cg").style.color = "white"
+                document.getElementById("aa").style.color = "white"
+                document.getElementById("ab").style.color = "white"
                 clicked = false
             }
             else
             {
                 console.log("flipped")
                 document.body.style.backgroundImage = "url('./res/img2.jpg')"
+                document.getElementById("cc").style.color = "white"
+                document.getElementById("cd").style.color = "white"
+                document.getElementById("ce").style.color = "white"
+                document.getElementById("cf").style.color = "white"
+                document.getElementById("cg").style.color = "white"
+                document.getElementById("aa").style.color = "white"
+                document.getElementById("ab").style.color = "white"
                 clicked = true
             }
            
             document.getElementById("heading").style.color = "white";
             document.getElementById("instructions").style.color = "white";
             document.getElementById("note").style.color = "white";
+
 
         }
         function q4b(id)
